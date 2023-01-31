@@ -9,19 +9,21 @@ function mostrarAumento()
 	let Resultado;
 	let Resultadofinal;
 
+	Numero1 = document.getElementById("txtIdImporte").value;
+
 	Numero1 = parseInt(Numero1);
 	Resultado = parseInt(Resultado);
+	Resultadofinal = parseInt(Resultadofinal);
 
 
-
-	Numero1 = document.getElementById("txtIdImporte").value;
+	
 
 
 	Resultado = Numero1 * 25/100;
 
-	Resultadofinal = Numero1 - Resultado
+	Resultadofinal = Numero1 - Resultado;
 
-	 document.getElementById("txtIdResultado").value = Resultadofinal
+	document.getElementById("txtIdResultado").value = Resultadofinal;
 
 
 
