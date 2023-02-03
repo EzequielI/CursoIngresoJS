@@ -12,11 +12,8 @@ function mostrarAumento()
 	Numero1 = document.getElementById("txtIdImporte").value;
 
 	Numero1 = parseInt(Numero1);
-	Resultado = parseInt(Resultado);
-	Resultadofinal = parseInt(Resultadofinal);
-
-
-	
+	//Resultado = parseInt(Resultado);
+	//Resultadofinal = parseInt(Resultadofinal);
 
 
 	Resultado = Numero1 * 25/100;
