@@ -10,16 +10,18 @@ function mostrar()
 		alert("Excelente");
 		
 	}
-	if (nota > 4) {
-		
-		alert("Aprobo");
+		else  { 
+			if (nota > 4) {
+			alert("Aprobo");
+				}
+				else {
+
+				alert("Vamos, la proxima se puede");
+			
+					}
 
 	}
-	if (nota < 3) {
-
-		alert("Vamos, la proxima se puede");
-		
-	}
+	
 	
 
 }
