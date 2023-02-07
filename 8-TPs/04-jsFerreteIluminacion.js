@@ -10,5 +10,95 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+    let lampara;
+    let preciofinal;
+    let lamparasuma;
+    let marca;
+    let descuento;
+    let ingresosbrutos;
+
+    marca = document.getElementById("Marca").value ;
+    
+    lampara = parseInt(lampara);
+
+    lampara = document.getElementById("txtIdCantidad").value ;
+
+    lamparasuma = lampara * 35;
+ //A
+  if (lampara >= 6) {
+    descuento = 0.50;
+    
+    } else { if (lampara <= 6) {
+    descuento = 0;
+  }//B
+    if (lampara == 5 && marca == "ArgentinaLuz") {
+        descuento = 0.40;
+    } else { if (lampara == 5 && marca != "ArgentinaLuz") {
+        descuento = 0.30;
+    }}
+        //C
+        if (lampara == 4 && marca == "ArgentinaLuz") {
+            descuento = 0.25;
+        } else { if (lampara == 4 && marca == "FelipeLamparas") {
+            descuento = 0.25;
+        }
+            if (lampara == 4 && marca != "ArgentinaLuz" && marca != "FelipeLamparas") {
+                descuento = 0.20;
+            }} 
+            //D
+           		 if (lampara == 3 && marca == "ArgentinaLuz") {
+                descuento = 0.15;
+
+           		 } else { if (lampara == 3 && marca == "FelipeLamparas") {
+				descuento = 0.10;
+			}else { if (lampara == 3 && marca != "ArgentinaLuz" && marca != "FelipeLamparas") {
+				descuento = 0.05;
+			} } 
+                
+            }
+                
+            
+
+		
+		
+		
+    }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+    preciofinal = lamparasuma * descuento;
+    preciofinal = lamparasuma - preciofinal;
+	if (preciofinal >= 120) {
+		ingresosbrutos = 0.10;
+		ingresosbrutos = lamparasuma * ingresosbrutos;
+		alert("IIBB Usted pago "+ ingresosbrutos+ " de impuestos")
+	}
+	
+
+     
+
+      document.getElementById("txtIdprecioDescuento").value = preciofinal
+
+
+
+
+
 }

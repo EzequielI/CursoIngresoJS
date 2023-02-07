@@ -11,17 +11,16 @@ function mostrar()
 		alert("Usted es un mayor")
 		
 	} 
-	else 
-	{ 
+		else { 
 		if (edad >= 13 && edad <= 17) {
-			alert("Usted es un adolescente");
-	}
-	else  { 
-		alert("Usted es un menor");
+		alert("Usted es un adolescente");
+		}
+				else  { 
+				alert("Usted es un menor");
 		
-	 }
+	 			}
 		
-	}
+			}
 
 
 }
