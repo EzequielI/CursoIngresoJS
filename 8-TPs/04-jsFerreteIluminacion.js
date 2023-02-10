@@ -53,37 +53,9 @@ function CalcularPrecio ()
 				descuento = 0.10;
 			}else { if (lampara == 3 && marca != "ArgentinaLuz" && marca != "FelipeLamparas") {
 				descuento = 0.05;
-			} } 
-                
-            }
-                
-            
-
-		
-		
-		
+			} } }		
     }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
+       
     preciofinal = lamparasuma * descuento;
     preciofinal = lamparasuma - preciofinal;
 	if (preciofinal >= 120) {
@@ -91,14 +63,5 @@ function CalcularPrecio ()
 		ingresosbrutos = lamparasuma * ingresosbrutos;
 		alert("IIBB Usted pago "+ ingresosbrutos+ " de impuestos")
 	}
-	
-
-     
-
       document.getElementById("txtIdprecioDescuento").value = preciofinal
-
-
-
-
-
 }
