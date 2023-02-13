@@ -56,6 +56,7 @@ function mostrar()
 				
 					
 				}	
+				break;
 		}
 	
 	alert(mensaje);

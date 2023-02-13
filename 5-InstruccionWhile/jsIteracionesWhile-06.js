@@ -1,11 +1,16 @@
 function mostrar()
 {
-	var contador;
-	var acumulador;
+	var contador= 0
+	var acumulador = 0
 	var numeroIngresado;
+	
 
-	contador=0;
-	acumulador=0;
+	while (contador < 5) {
+		numeroIngresado = prompt("Ingrese 5 numeros");
+		numeroIngresado = parseInt(numeroIngresado)
+		acumulador += numeroIngresado
+		contador++
+	}
 	
 	
 	txtIdSuma.value=acumulador;

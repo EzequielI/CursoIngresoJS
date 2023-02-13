@@ -3,10 +3,16 @@ function mostrar()
 	var estacionIngresada =txtIdEstacion.value;
 	let destinoingresado = txtIdDestino.value;
 	let preciobase = 15000;
+	let preciodescuento;
+	let precioaumento;
 	let aumento;
 	let descuento;
+	let descuentoOaumento;
 	preciobase = parseInt(preciobase);
 	aumento = parseInt(aumento);
+	descuento = parseInt(descuento);
+	preciobdescuento = parseInt(preciodescuento);
+	precioaumento = parseInt(precioaumento);
 
 
 
@@ -15,20 +21,18 @@ function mostrar()
 			switch (destinoingresado) {
 				case "Bariloche":
 					aumento = 20/100;
-					aumento = preciobase * aumento;
-					preciobase = preciobase + aumento;
+					descuentoOaumento = "Aumento"
+					
 
 					break;
 				case "Cataratas":
 				case "Cordoba":
 					descuento = 10/100;
-					descuento = preciobase * descuento;
-					preciobase = preciobase - descuento;
+					descuentoOaumento = "Descuento"
 					break;
 				case "Mar del plata": 
 					descuento = 20/100;
-					descuento = preciobase * descuento;
-					preciobase = preciobase - descuento;
+					descuentoOaumento = "Descuento"
 					break;
 			
 				
@@ -39,20 +43,17 @@ function mostrar()
 			switch (destinoingresado) {
 				case "Bariloche":
 					descuento = 20/100;
-					descuento = preciobase * descuento;
-					preciobase = preciobase - descuento;
+					descuentoOaumento = "Descuento"
 
 					break;
 				case "Cataratas":
 				case "Cordoba":
 					aumento = 10/100;
-					aumento = preciobase * aumento;
-					preciobase = preciobase + aumento;
+					descuentoOaumento = "Aumento"
 					break;
 				case "Mar del plata": 
 					aumento = 20/100;
-					aumento = preciobase * aumento;
-					preciobase = preciobase + aumento;
+					descuentoOaumento = "Aumento"
 					break;
 			
 				
@@ -65,8 +66,7 @@ function mostrar()
 				case "Cataratas":
 				case "Mar del plata": 
 					aumento = 10/100;
-					aumento = preciobase * aumento;
-					preciobase = preciobase + aumento;
+					descuentoOaumento = "Aumento"
 					break;
 				
 
@@ -74,10 +74,22 @@ function mostrar()
 				
 			}	
 	}
+	switch (descuentoOaumento) {
+		case "Descuento":
+			preciodescuento = preciobase * descuento
+			preciodescuento = preciobase - preciodescuento
+			alert("El precio de estadia sera "+ preciodescuento);
+			break;
 	
+		case "Aumento":
+			precioaumento = preciobase * aumento
+			precioaumento = preciobase + precioaumento
+			alert("El precio de estadia sera "+ precioaumento)
+			break;
+	}
 
 
-	alert("El precio de estadia sera "+ preciobase);
+	
 
 
 

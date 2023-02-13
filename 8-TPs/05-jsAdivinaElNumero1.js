@@ -12,15 +12,31 @@ var contadorIntentos;
 
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 100
-	 
 		//alert(numeroSecreto );
-	
+    let numeromax = 100;
+    let numeromin = 1;
+    let numeroelegido = prompt("Ingrese el numero que usted crea que sera");
+    let numerofinal;
+    let numero = Math.random()*(numeromax - numeromin)+ numeromin;
+    numero = parseInt(numero);
+    
+    alert("El numero es " + numero);
 
 }
 
 function verificar()
 {
 	
+    if (numero = numeroelegido) {
+      alert ("Usted es un ganador!!! y en solo X intentos")
+    } else { if (numeroelegido > numero) {
+      numerofinal = numeroelegido - numero
+      alert("Usted se paso por " + numerofinal)
+    }
+      alert("")
+     }
+      
+  
+  
 	
 }
