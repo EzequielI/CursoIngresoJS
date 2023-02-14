@@ -3,7 +3,6 @@ Al presionar el botón pedir  números  hasta que el usuario quiera,
 mostrar el número máximo y el número mínimo ingresado.*/
 function mostrar()
 {	// declarar variables
-	var banderaDelPrimero;
 	var numeroIngresado;
 	var numeroMaximo;
 	var numeroMinimo;
@@ -12,20 +11,21 @@ function mostrar()
 	var acumulador = 0
 
 	//iniciar variables
-	banderaDelPrimero="es el primero";
 	respuesta='si';
 
 	while (respuesta == "si") {
 		numeroIngresado = prompt("Ingrese su numeros");
 		numeroIngresado = parseInt(numeroIngresado);
-		acumulador += numeroIngresado
+			while (isNaN(numeroIngresado)) {
+				numeroIngresado = prompt("Ingrese un numero real");
+				numeroIngresado = parseInt(numeroIngresado);}
+		if (numeroMinimo < numeroIngresado) {
+			numeroMaximo = numeroIngresado
+		}else{numeroMinimo = numeroIngresado }
+		acumulador = numeroIngresado
 		contador++;
 		respuesta = prompt("Desea continuar?")
 	}
-	console.log(numeroIngresado.sort((numeroMinimo, numeroMaximo) => numeroMinimo - numeroMaximo ))
-	
-	
-
 	txtIdMaximo.value=numeroMaximo;
-	txtIdMinimmo.value=numeroMinimo;
+	txtIdMinimo.value=numeroMinimo;
 }//FIN DE LA FUNCIÓN
