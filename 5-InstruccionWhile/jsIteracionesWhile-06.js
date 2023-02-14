@@ -8,8 +8,14 @@ function mostrar()
 	while (contador < 5) {
 		numeroIngresado = prompt("Ingrese 5 numeros");
 		numeroIngresado = parseInt(numeroIngresado)
-		acumulador += numeroIngresado
+		
 		contador++
+
+		while (isNaN(numeroIngresado)) {
+			numeroIngresado = prompt("Ingrese un numero real");
+			numeroIngresado = parseInt(numeroIngresado);
+		}
+		acumulador += numeroIngresado
 	}
 	
 	
