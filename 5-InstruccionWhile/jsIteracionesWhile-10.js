@@ -16,54 +16,49 @@ hasta que el usuario quiera, mostrar:
 	var respuesta;
 	var sumaPositivos;
 	var sumaNegativos;
-	var contadorpositivos= 0;
 	let acumulador;
+	let acumuladornegativos;
+	var contadorpositivos= 0;
 	let contadornegativos = 0;
 	let contadorceros = 0;
 	let contadorpares = 0;
 	let promediopositivo;
 	let promedionegativo;
 	let diferencia;
-	let acumuladornegativos;
 
-	respuesta='si';
 	sumaPositivos=0;
 	sumaNegativos=0;
 	
 	acumulador = parseInt(acumulador);
 	//Ingresa el numero
-	while (respuesta == "si") {
-		numeroIngresado = prompt("Ingrese su numeros");
-		numeroIngresado = parseInt(numeroIngresado);
-		//Valida
-			while (isNaN(numeroIngresado)) {
-				numeroIngresado = prompt("Ingrese un numero real");
-				numeroIngresado = parseInt(numeroIngresado);}
-		//Si es negativo
-		if (numeroIngresado < 0 ) {
-			
-			acumuladornegativos = numeroIngresado + sumaNegativos;
-			//sumaNegativos = parseInt(sumaNegativos);
-			sumaNegativos = acumuladornegativos;
-			contadornegativos++;
-		//Si es positivo
-			}else{ if (numeroIngresado > 0) {
-				acumulador = numeroIngresado + sumaPositivos;
-				sumaPositivos = acumulador;
-				contadorpositivos++;}
+	do{
+
+		do{numeroIngresado = prompt("Ingrese un numero real");
+			numeroIngresado = parseInt(numeroIngresado);
+			}while (isNaN(numeroIngresado))
+			//Si es negativo
+			if (numeroIngresado < 0 ) {
+				acumuladornegativos = numeroIngresado + sumaNegativos;
+				sumaNegativos = acumuladornegativos;
+				contadornegativos++;
+			//Si es positivo
+				}else{ if (numeroIngresado > 0) {
+					acumulador = numeroIngresado + sumaPositivos;
+					sumaPositivos = acumulador;
+					contadorpositivos++;}
+				}
+		// Si son ceros
+						if (numeroIngresado == 0) {
+							contadorceros++;
 			}
-			
-		if (numeroIngresado == 0) {
-			contadorceros++;
-		}
-		if (numeroIngresado % 2 == 0) {
-			contadorpares++;
-		}
-
-
-	respuesta = prompt("Desea continuar?")
+		//Los pares ingresados
+							if (numeroIngresado % 2 == 0) {
+								contadorpares++;
+			}
 	
-	}
+	
+		respuesta = confirm ("Desea continuar?")
+	}while(respuesta);
 
 	promedionegativo = sumaNegativos / contadornegativos;
 	promediopositivo = sumaPositivos / contadorpositivos;
@@ -73,9 +68,10 @@ hasta que el usuario quiera, mostrar:
 	if (diferencia < 0) {
 		diferencia = diferencia * -1;
 	}
-	document.write ("La suma de los negativos es "+ sumaNegativos + ", la suma de positivos es "+ sumaPositivos + ", la cantidad de positivos ingresados es "+ contadorpositivos +
-	", la cantidad de negativos ingresados es "+ contadornegativos + ", la cantidad de ceros ingresados es "+ contadorceros +", la cantidad de numeros pares ingresado es "+ contadorpares + 
-	", el promedio de los numeros positivos es " + promediopositivo + ", el promedio de numeros negativos es "+ promedionegativo + " y la diferencia entre los positivos y negativos es "
+	document.write ("La suma de los negativos es "+ sumaNegativos + "<br> la suma de positivos es "+ sumaPositivos + "<br> la cantidad de positivos ingresados es "+ contadorpositivos +
+	"<br> la cantidad de negativos ingresados es "+ contadornegativos + "<br> la cantidad de ceros ingresados es "+ contadorceros +"<br> la cantidad de numeros pares ingresado es "+ contadorpares + 
+	"<br> el promedio de los numeros positivos es " + promediopositivo + "<br> el promedio de numeros negativos es "+ promedionegativo + " <br> la diferencia entre los positivos y negativos es "
 	+ diferencia)
 }
 //FIN DE LA FUNCIÓN
+
