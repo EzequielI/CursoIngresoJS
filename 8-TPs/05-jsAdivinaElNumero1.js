@@ -32,9 +32,9 @@ function verificar()
     } else { if (numeroelegido > numero) {
       numerofinal = numeroelegido - numero
       alert("Usted se paso por " + numerofinal)
-    }
+      }
       alert("")
-     }
+          }
       
   
   

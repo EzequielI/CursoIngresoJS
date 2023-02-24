@@ -28,47 +28,46 @@ function CalcularPrecio ()
   if (lampara >= 6) {
     descuento = 0.50;
     
-    } else { if (lampara <= 6) {
+ }else{ if (lampara <= 6) {
     descuento = 0;}
   //B
     if (lampara == 5 ) {
         switch (marca) {
-            case "ArgentinaLuz":
-                descuento = 0.40;
-                break;
-          
-            default:
-                descuento = 0.30;
-                break;
-    }}
-        //C
-        if (lampara == 4 ) {
-            switch (marca) {
-                case "ArgentinaLuz":
-                case "FelipeLamparas":
-                    descuento = 0.25;
-                    break;
-                default:
-                    descuento = 0.20
-                    break;
-            }
-        } 
-            //D
-           		 if (lampara == 3) {
-                    switch (marca) {
-                        case "ArgentinaLuz":
-                            descuento = 0.15;
-                            break;
-                        case "FelipeLamparas":
-                            descuento = 0.10
-                            break;
-                    
-                        default:
-                            descuento = 0.05;
-                            break;
-                    }
+        case "ArgentinaLuz":
+        descuento = 0.40;
+        break;
+        default:
+        descuento = 0.30;
+        break;
+        }
+    }
+//C
+    if (lampara == 4 ) {
+        switch (marca) {
+        case "ArgentinaLuz":
+        case "FelipeLamparas":
+        descuento = 0.25;
+        break;
+        default:
+        descuento = 0.20
+        break;
+        }
+    } 
+//D
+    if (lampara == 3) {
+        switch (marca) {
+        case "ArgentinaLuz":
+        descuento = 0.15;
+        break;
+        case "FelipeLamparas":
+        descuento = 0.10
+        break;
+        default:
+        descuento = 0.05;
+        break;
+        }
 
-           		 }		
+    }		
     } 
        
     preciofinal = lamparasuma * descuento;

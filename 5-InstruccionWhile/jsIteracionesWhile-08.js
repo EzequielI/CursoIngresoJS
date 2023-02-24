@@ -25,10 +25,10 @@ function mostrar()
 		multiplicacionNegativos = numeroIngresado;
 		contador++;
 	//Si es positivo
-		}else{
-			acumulador = numeroIngresado + sumaPositivos;
-			sumaPositivos = acumulador
-			}
+	}else{
+		acumulador = numeroIngresado + sumaPositivos;
+		sumaPositivos = acumulador
+	}
 	respuesta = confirm("Desea continuar?")
 	}while((respuesta))
 	

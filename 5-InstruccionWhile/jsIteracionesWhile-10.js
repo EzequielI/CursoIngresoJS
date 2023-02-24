@@ -35,26 +35,26 @@ hasta que el usuario quiera, mostrar:
 
 		do{numeroIngresado = prompt("Ingrese un numero real");
 			numeroIngresado = parseInt(numeroIngresado);
-			}while (isNaN(numeroIngresado))
+		}while (isNaN(numeroIngresado))
 			//Si es negativo
-			if (numeroIngresado < 0 ) {
-				acumuladornegativos = numeroIngresado + sumaNegativos;
-				sumaNegativos = acumuladornegativos;
-				contadornegativos++;
+		if (numeroIngresado < 0 ) {
+			acumuladornegativos = numeroIngresado + sumaNegativos;
+			sumaNegativos = acumuladornegativos;
+			contadornegativos++;
 			//Si es positivo
-				}else{ if (numeroIngresado > 0) {
-					acumulador = numeroIngresado + sumaPositivos;
-					sumaPositivos = acumulador;
-					contadorpositivos++;}
-				}
+		}else{ if (numeroIngresado > 0) {
+			acumulador = numeroIngresado + sumaPositivos;
+			sumaPositivos = acumulador;
+			contadorpositivos++;}
+		}
 		// Si son ceros
-						if (numeroIngresado == 0) {
-							contadorceros++;
-			}
+		if (numeroIngresado == 0) {
+			contadorceros++;
+		}
 		//Los pares ingresados
-							if (numeroIngresado % 2 == 0) {
-								contadorpares++;
-			}
+		if (numeroIngresado % 2 == 0) {
+			contadorpares++;
+		}
 	
 	
 		respuesta = confirm ("Desea continuar?")

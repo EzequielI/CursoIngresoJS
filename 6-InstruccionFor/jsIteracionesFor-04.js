@@ -1,6 +1,13 @@
+
 function mostrar()
 {
-	alert("ok");
+	
+	for (let i = 0; i < 100 ; i++) {
+		if (i == 99) {
+			break;
+		}
+		console.log(i);
+	}
 
 
 

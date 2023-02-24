@@ -16,21 +16,21 @@ function mostrar()
 		do{
 			numeroIngresado = prompt ("Ingrese un numero");
 			numeroIngresado = parseInt(numeroIngresado);
-	} while(isNaN(numeroIngresado))
+		} while(isNaN(numeroIngresado))
 	
 	if (bandera == true) {
 		bandera = false;
 		numeroMaximo = numeroIngresado;
 		numeroMinimo = numeroIngresado;
-	} 	else {
-			if (numeroMinimo < numeroIngresado) {
-				numeroMaximo = numeroIngresado
-}					else{numeroMinimo = numeroIngresado }
-							acumulador = numeroIngresado
-							contador++;}
-	respuesta = confirm("Desea continuar?");
+	}else {
+		if (numeroMinimo < numeroIngresado) {
+			numeroMaximo = numeroIngresado
+		}else{numeroMinimo = numeroIngresado }
+			acumulador = numeroIngresado
+			contador++;}
+respuesta = confirm("Desea continuar?");
 
 	}while(respuesta);
-	txtIdMaximo.value=numeroMaximo;
-	txtIdMinimo.value=numeroMinimo;
+txtIdMaximo.value=numeroMaximo;
+txtIdMinimo.value=numeroMinimo;
 }//FIN DE LA FUNCIÓN
