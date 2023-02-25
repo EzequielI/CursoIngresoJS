@@ -1,15 +1,21 @@
 function mostrar()
 {
 	let numeroingresado;
-	numeroingresado = prompt("Ingrese un numero");
-	for (let i = 0; i < numeroingresado;) {
-		if (numeroingresado % 1 == 0 && numeroingresado % numeroingresado == 0) {
+	let divididos= 0;
+	do{
+		numeroingresado = prompt("Ingrese un numero");
+		numeroingresado = parseInt(numeroingresado);
+	}while(isNaN(numeroingresado));
+	
+	for (let i = 1; i <=numeroingresado;i++ ) {
+		if (numeroingresado % i == 0) {
+			divididos++;
+		}
+	}
+		if (divididos == 2) {
 			document.write("Este numero es primo");
 		}else{
 			document.write("Este numero no es primo");
 		}
-		break;
-	}
-
-
+	
 }//FIN DE LA FUNCIÓN
