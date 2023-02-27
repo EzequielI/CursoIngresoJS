@@ -1,4 +1,3 @@
-
 function mostrar()
 {
 	let producto;
@@ -12,7 +11,6 @@ function mostrar()
 	let alcohol = 0;
 	let productoanterior = 0;
 	let alcoholmasbarato;
-	let sumacantidad = 0;
 	let mundoclean = 0;
 	let ecobrillo = 0;
 	let fabricantebarato;
@@ -21,22 +19,19 @@ function mostrar()
 	let cantidadanterior = 0;
 	let promedio;
 	let cantidadmayor;
-
+	let cantidadjabon= 0;
+	let cantidadbarbijo = 0;
+	let cantidadalcohol = 0;
+	let productomayor;
+	let preciojabon = 0;
+	let preciobarbijo = 0;
+	let precioalcohol = 0;
+	let cantidadmasgrande;
+	let cantidadjabonpuntoc = 0;
 	do {
 		producto = prompt("Ingrese que producto cargar( las opciones son: Jabones, barbijo o alcohol)")
 		while (producto != "jabon" && producto != "barbijo" && producto != "alcohol" ){
 			producto = prompt("Ingrese un producto existente")
-		}
-		switch (producto) {
-			case "jabon":
-			jabon = jabon + 1
-			break;
-			case "barbijo":
-			barbijo = barbijo + 1
-			break;
-			case "alcohol":
-			alcohol = alcohol + 1
-			break;			
 		}
 		//Ingreso y validacion de precio
 		do{
@@ -56,38 +51,61 @@ function mostrar()
 		while (marca != "lysol" && marca != "sanitas" ) {
 			marca = prompt("Porfavor ingrese una marca existente")
 		}
-
 		fabricante = prompt("Ingrese el fabricante del producto(Mundo clean o Ecobrillo)");
 		while (fabricante != "mundo clean" && fabricante != "ecobrillo") {
 			fabricante = prompt("Porfavor ingrese una fabricante existente");
 		}
-		//A
-		if (producto == "alcohol") {
+		switch (producto) {
+			case "jabon":
+			jabon = jabon + 1
+			preciojabon = precio + preciojabon;
+			cantidadjabon = cantidad + cantidadjabon;
+			cantidadjabonpuntoc = cantidadjabonpuntoc + cantidad;
+			break;
+			case "barbijo":
+			barbijo = barbijo + 1
+			preciobarbijo = precio + preciobarbijo;
+			cantidadbarbijo = cantidad + cantidadbarbijo;
+			break;
+			case "alcohol":
+			alcohol = alcohol + 1
+			precioalcohol = precio + precioalcohol;
+			cantidadalcohol = cantidad + cantidadalcohol;
 			if (bandera == true) {
 				bandera = false
-				productoanterior = parseInt(productoanterior);
-				productoanterior = productoanterior + precio;
-				productoanterior = productoanterior + 1;
-			}
-			if (precio < productoanterior) {
 				alcoholmasbarato = precio;
 				fabricantebarato = fabricante;
 				menorcantidad = cantidad;
+				productoanterior = precio;
+			}else{if (precio < productoanterior) {
+				alcoholmasbarato = precio;
+				fabricantebarato = fabricante;
+				menorcantidad = cantidad;
+				productoanterior = precio;}
 			}
-			
-		}
-		//B
-		if (cantidad > cantidadanterior) {
-			cantidadanterior = cantidad;
-			promedio = precio / cantidad;
-			promedio = parseInt(promedio);
-		}					
-	contador++;
+			break;			
+		}		
+		contador++;
 	} while (contador < 5);
+	//Termina la recoleccion de datos
 	//A
 	document.write ("El alcohol mas barato fue de "+ alcoholmasbarato+ "<br>La cantidad de unidades fue de "+ menorcantidad + "<br> El fabricante de este producto fue "+ fabricantebarato);
 	//B
-	document.write("<br>La mayor cantidad ingresada es " + cantidadmayor +"<br> Y su promedio es de "+ promedio);
+	if (alcohol > barbijo && alcohol > jabon) {
+		cantidadmasgrande = "Alcohol";
+		promedio = precioalcohol / cantidadalcohol;
+	  }else {
+		if (barbijo > jabon) {
+		  cantidadmasgrande = "Barbijo";
+		  promedio = preciobarbijo / cantidadbarbijo;
+		} else {
+			cantidadmasgrande = "Jabon";
+			promedio = preciojabon / cantidadjabon;
+		  
+		}
+	  }
+	  promedio = parseInt(promedio);
+	document.write("<br>La mayor cantidad ingresada es de " + cantidadmasgrande +"<br> Y su promedio es de "+ promedio);
 	//C
-	document.write("<br>El total de unidades de jabon son de "+ jabon);
+	document.write("<br>El total de unidades de jabon son de "+ cantidadjabon);
 }
